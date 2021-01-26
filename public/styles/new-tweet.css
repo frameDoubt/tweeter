@@ -1,0 +1,23 @@
+form {
+  align-self: center;
+}
+
+textarea {
+  border: none;
+  border-bottom: 2px solid black;
+  width: 100%;
+  resize: none;
+  background-color: inherit;
+}
+
+form button {
+  background-color: #4056A1;
+  font-family: 'Bungee', cursive;
+  color: #ffffff;
+}
+
+.button-counter {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Bungee', cursive;
+}
