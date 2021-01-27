@@ -1,10 +1,24 @@
-#tweetGallery {
-  margin-top: 100px;
-  border: 3px solid black;
+#tweetsGallery {
+  margin: 1em 0;
+  border: solid;
 }
 
 header {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  padding: 0 1em;
 }
 
+header>div {
+  display: flex;
+}
+
+.tweetArea {
+  padding: 1em;
+  border-bottom: 2px solid black;
+  margin: 1em 1em;
+}
+
+footer {
+  padding: 0 1em;
+}
