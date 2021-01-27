@@ -21,3 +21,7 @@ form button {
   justify-content: space-between;
   font-family: 'Bungee', cursive;
 }
+
+.red-text {
+  color: crimson;
+}
