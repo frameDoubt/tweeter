@@ -1,10 +1,10 @@
-#tweetsGallery {
+article {
   margin: 1em 0;
   border: solid;
   /* font-weight: 300; */
 }
 
-#tweetsGallery:hover {
+article:hover {
   box-shadow: .75em .75em;
   font-weight: 700;
 }
@@ -19,7 +19,7 @@ header>div {
   display: flex;
 }
 
-header>div img {
+.avatar {
   height: 2em;
   width: auto;
   align-self: center;
