@@ -19,6 +19,13 @@ header>div {
   display: flex;
 }
 
+header>div img {
+  height: 2em;
+  width: auto;
+  align-self: center;
+  padding-right: 0.5em;
+}
+
 .tweetArea {
   padding: 1em;
   border-bottom: 2px solid black;
