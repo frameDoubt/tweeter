@@ -4,11 +4,11 @@ $(document).ready(function() {
     // variables used to store the number of characters in textarea
     // and a reference to text in counter class
     let differential = this.textLength;
-    let $outputValue = $('#tweet-text').siblings().last().children().last().html();
+    console.log(differential);
     // changes color of counter when below zero
-    if ($outputValue < 0) {
+    if (differential > 140) {
       $('.counter').addClass("red-text");
-    } else if ($outputValue > 0) {
+    } else {
       $('.counter').removeClass("red-text");
     }
     // updates value to user how many more characters they allowed to input
