@@ -1,6 +1,12 @@
 #tweetsGallery {
   margin: 1em 0;
   border: solid;
+  /* font-weight: 300; */
+}
+
+#tweetsGallery:hover {
+  box-shadow: .75em .75em;
+  font-weight: 700;
 }
 
 header {
