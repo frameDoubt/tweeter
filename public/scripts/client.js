@@ -28,32 +28,43 @@ const createTweetElement = function(data) {
 };
 
 const renderTweets = function(tweets) {
+  // iterates over values in given object/array
   for (let tweet of tweets) {
-    $('#tweets-container').append(createTweetElement(tweet, `<br>`));
+    $('#tweets-container').prepend(createTweetElement(tweet, `<br>`));
   }
 };
+// function for loading tweets from database
+const loadTweets = function() {
+  $.get('/tweets', function(data, status) {
+    $('#tweets-container').empty();
+    renderTweets(data);
+    console.log(status);
+  });
+};
+loadTweets();
 
 $(() => {
+  // handles for data on submit
   $('#newTweetForm').on('submit', function(event) {
+    // prevents form's default action
     event.preventDefault();
-    console.log(this);
+    // converts data to be submitted to server
     const serializedData = $(this).serialize();
-    console.log(serializedData);
-    $.post("/tweets/", serializedData)
-      .then((response) => {
-        console.log(response);
-      })
+    // variable used to verify if user entered a number of characters
+    const validationData = decodeURI(serializedData).slice(5);
+    // condtional controllers for submission of tweet
+    if (!validationData) {
+      alert("You must enter characters for your Tweet");
+    } else if (validationData.length > 140) {
+      alert("You've entered too many characters for a Tweet");
+    } else {
+      $.post("/tweets/", serializedData)
+        .then((response) => {
+          console.log(response);
+        })
+        loadTweets();
+      }
+    $('#tweet-text').val('');
+    $('.counter').text('140');
   });
-
-  const loadTweets = function() {
-    // $.ajax({
-    //   url: '/tweets', type: 'GET',
-    //   success: function(data) {renderTweets(data)},
-    // });
-    $.get('/tweets', function(data, status) {
-      renderTweets(data);
-      console.log(status);
-    });
-  }
-  loadTweets();
 });
