@@ -5,6 +5,11 @@
  */
 
 const createTweetElement = function(data) {
+  const escape =  function(str) {
+    let div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  }
   return `
   <article>
   <header>
@@ -14,7 +19,7 @@ const createTweetElement = function(data) {
     </div>
     <p id="tweeterHandle">${data.user.handle}</p>
   </header>
-  <p class="tweetArea">${data.content.text}</p>
+  <p class="tweetArea">${escape(data.content.text)}</p>
   <footer>
     <p id="daysSinceTweet">${moment(data.created_at.toString(), 'x').fromNow()}</p>
     <p id="icons">
