@@ -4,7 +4,6 @@ $(document).ready(function() {
     // variables used to store the number of characters in textarea
     // and a reference to text in counter class
     let differential = this.textLength;
-    console.log(differential);
     // changes color of counter when below zero
     if (differential > 140) {
       $('.counter').addClass("red-text");

@@ -60,3 +60,16 @@ const renderTweets = function(tweets) {
 };
 
 renderTweets(data);
+
+$(() => {
+  $('#newTweetForm').on('submit', function(event) {
+    event.preventDefault();
+    console.log(this);
+    const serializedData = $(this).serialize();
+    console.log(serializedData);
+    $.post("/tweets/", serializedData)
+      .then((response) => {
+        console.log(response);
+      })
+  });
+});
