@@ -9,6 +9,7 @@
 #tooMuchChar {
   display: none;
   padding: 0.75em 1em;
+  width: 100%;
   color: crimson;
   border: 2px solid crimson;
 }
@@ -16,6 +17,7 @@
 #noChar {
   display: none;
   padding: 0.75em 1em;
+  width: 100%;
   color: crimson;
   border: 2px solid crimson;
 }

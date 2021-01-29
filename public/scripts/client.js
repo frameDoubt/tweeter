@@ -71,6 +71,7 @@ $(() => {
         })
         loadTweets();
       }
+      // reset value in form
     $('#tweet-text').val('');
     $('.counter').text('140');
   });
