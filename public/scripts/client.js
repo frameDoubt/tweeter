@@ -51,6 +51,8 @@ loadTweets();
 $(() => {
   // handles for data on submit
   $('#newTweetForm').on('submit', function(event) {
+    $('#noChar').hide();
+    $('#tooMuchChar').hide();
     // prevents form's default action
     event.preventDefault();
     // converts data to be submitted to server
@@ -59,9 +61,9 @@ $(() => {
     const validationData = decodeURI(serializedData).slice(5);
     // condtional controllers for submission of tweet
     if (!validationData) {
-      alert("You must enter characters for your Tweet");
+      $('#noChar').slideDown();
     } else if (validationData.length > 140) {
-      alert("You've entered too many characters for a Tweet");
+      $('#tooMuchChar').slideDown();
     } else {
       $.post("/tweets/", serializedData)
         .then((response) => {

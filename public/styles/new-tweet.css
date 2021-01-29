@@ -6,10 +6,25 @@
   width: 100%;
 }
 
+#tooMuchChar {
+  display: none;
+  padding: 0.75em 1em;
+  color: crimson;
+  border: 2px solid crimson;
+}
+
+#noChar {
+  display: none;
+  padding: 0.75em 1em;
+  color: crimson;
+  border: 2px solid crimson;
+}
+
 form {
   display: flex;
   flex-direction: column;
   width: 100%;
+  padding-top: 0.5em;
 }
 
 #tweet-text {

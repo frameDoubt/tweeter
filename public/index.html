@@ -55,9 +55,19 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
-        <h2>Compose Tweet</h2>
+        <div id="tooMuchChar">
+          <i class="fas fa-exclamation-triangle"></i>
+          <span>Error you have inserted too much CHAR!</span>
+          <i class="fas fa-exclamation-triangle"></i>
+        </div>
+        <div id="noChar">
+          <i class="fas fa-exclamation-triangle"></i>
+          <span>Hey! Why no CHAR?</span>
+          <i class="fas fa-exclamation-triangle"></i>
+        </div>
         <form id="newTweetForm" action="/tweets" method="POST">
-          <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
+          <label for="tweet-text">What are you humming about?</label>
+          <textarea name="text" id="tweet-text"></textarea>
           <div class="button-counter">
             <button type="submit" for="newTweetForm">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
