@@ -1,5 +1,4 @@
 $(document).ready(function() {
-  console.log("DOM loaded and ready");
   $('#tweet-text').on('input', function() {
     // variables used to store the number of characters in textarea
     // and a reference to text in counter class
