@@ -1,7 +1,6 @@
 article {
   margin: 1em 0;
   border: solid;
-  /* font-weight: 300; */
 }
 
 article:hover {
@@ -36,4 +35,12 @@ footer {
   display: flex;
   justify-content: space-between;
   padding: 0 1em;
+}
+
+#icons {
+  visibility: hidden;
+}
+
+article:hover #icons {
+  visibility: visible;
 }

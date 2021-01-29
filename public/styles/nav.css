@@ -1,4 +1,4 @@
-nav {
+#navBar {
   display: flex;
   height: 120px;
   width: 100%;
@@ -9,7 +9,7 @@ nav {
   top: 0;
 }
 
-nav p {
+#navBar>p {
   padding: 1.5em;
 }
 
@@ -17,3 +17,9 @@ body span {
   font-family: 'Bungee', cursive;
 }
 
+@media (max-width: 1023px) {
+  #navBar {
+    background-color: #e3bd00;
+    background-image: url(http://www.transparenttextures.com/patterns/blizzard.png);
+  }
+}

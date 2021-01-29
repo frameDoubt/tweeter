@@ -59,7 +59,7 @@ $(() => {
     const serializedData = $(this).serialize();
     // variable used to verify if user entered a number of characters
     const validationData = decodeURI(serializedData).slice(5);
-    // condtional controllers for submission of tweet
+    // condtional controls for submission of tweet
     if (!validationData) {
       $('#noChar').slideDown();
     } else if (validationData.length > 140) {

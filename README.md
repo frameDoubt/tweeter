@@ -13,5 +13,14 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Dependencies
 
+- Moment.js
 - Express
 - Node 5.10.x or above
+
+## Screenshots
+
+### Above 1024 Resolution
+!["Desktop Render"](/public/images/1024Res.png)
+
+### Below 1024 Resolution
+!["Tablet Render"](/public/images/below1024Res.png)
