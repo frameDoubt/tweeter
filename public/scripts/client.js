@@ -3,13 +3,14 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
+// yes it's a helper function, pretend you don't see it ;)
+const escape =  function(str) {
+  let div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+}
 
 const createTweetElement = function(data) {
-  const escape =  function(str) {
-    let div = document.createElement('div');
-    div.appendChild(document.createTextNode(str));
-    return div.innerHTML;
-  }
   return `
   <article>
   <header>
@@ -51,6 +52,7 @@ loadTweets();
 $(() => {
   // handles for data on submit
   $('#newTweetForm').on('submit', function(event) {
+    // hides alert banners
     $('#noChar').hide();
     $('#tooMuchChar').hide();
     // prevents form's default action
@@ -58,7 +60,7 @@ $(() => {
     // converts data to be submitted to server
     const serializedData = $(this).serialize();
     // variable used to verify if user entered a number of characters
-    const validationData = decodeURI(serializedData).slice(5);
+    const validationData = decodeURIComponent(serializedData).slice(5);
     // condtional controls for submission of tweet
     if (!validationData) {
       $('#noChar').slideDown();
@@ -68,11 +70,11 @@ $(() => {
       $.post("/tweets/", serializedData)
         .then((response) => {
           console.log(response);
+          loadTweets();
+          // reset value in form
+        $('#tweet-text').val('');
+        $('.counter').text('140');
         })
-        loadTweets();
       }
-      // reset value in form
-    $('#tweet-text').val('');
-    $('.counter').text('140');
   });
 });
